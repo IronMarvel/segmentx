@@ -1,0 +1,21 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname="Arial", bgcolor="white", pad=0.2, nodesep=0.35, ranksep=0.6];
+  node [shape=box, style="rounded,filled", fillcolor="#eef4ff", color="#4772b8", fontname="Arial", fontsize=11, margin="0.12,0.08"];
+  edge [color="#555555", arrowsize=0.8, fontname="Arial", fontsize=9];
+
+  user [label="User / CLI\nmain.py", fillcolor="#e9f7ef", color="#4d8a64"];
+  input [label="Input Manager\nImage loading + validation"];
+  pre [label="Preprocessing\nResize • Blur • Grayscale • CLAHE"];
+  seg [label="Segmentation Engine\nK-Means • Region Growing\nCanny/Edge • Mean-Shift • Hybrid"];
+  hybrid [label="Project-specific Hybrid\nK-Means color evidence\n+ Canny boundary evidence"];
+  extract [label="Object Extraction\nMasks • Morphology • Components\nContours • Bounding boxes"];
+  eval [label="Evaluation & Analysis\nIoU • Dice • Pixel accuracy\nTime • object count • area"];
+  viz [label="Visualization & Outputs\nMasks • Crops • CSV/JSON\nAnnotated images"];
+
+  user -> input -> pre -> seg;
+  seg -> hybrid [label="hybrid mode"];
+  seg -> extract [label="other modes"];
+  hybrid -> extract;
+  extract -> eval -> viz;
+}

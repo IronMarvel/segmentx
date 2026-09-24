@@ -1,0 +1,32 @@
+digraph G {
+  rankdir=TB;
+  graph [fontname="Arial", bgcolor="white", pad=0.2, nodesep=0.3, ranksep=0.45];
+  node [shape=box, style="rounded,filled", fillcolor="#f7f7f7", color="#555555", fontname="Arial", fontsize=10, margin="0.12,0.08"];
+  edge [color="#555555", arrowsize=0.8];
+
+  a [label="Start\nCLI command"];
+  b [label="Load & validate image"];
+  c [label="Preprocess\nresize → denoise → grayscale/enhance"];
+  d [label="Choose segmentation method"];
+  e [label="K-Means"];
+  f [label="Region Growing"];
+  g [label="Edge Based"];
+  h [label="Mean-Shift Based"];
+  hh [label="Hybrid: K-Means + Canny boundary refinement"];
+  i [label="Generate segmentation mask"];
+  j [label="Morphological cleanup"];
+  k [label="Connected components"];
+  l [label="Extract objects + bounding boxes"];
+  m [label="Compute measurements\nprocessing time, area ratio, object count"];
+  n [label="Optional ground truth\nIoU, Dice, pixel accuracy"];
+  o [label="Save results\nPNG + JSON + CSV"];
+  p [label="End"];
+
+  a -> b -> c -> d;
+  d -> e; d -> f; d -> g; d -> h; d -> hh;
+  e -> i; f -> i; g -> i; h -> i; hh -> i;
+  i -> j -> k -> l -> m;
+  m -> n [label="when supplied"];
+  n -> o; m -> o [label="otherwise"];
+  o -> p;
+}

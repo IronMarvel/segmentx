@@ -1,0 +1,31 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname="Arial", bgcolor="white", pad=0.2, nodesep=0.5, ranksep=0.6];
+  node [shape=record, style="rounded,filled", fillcolor="#eef4ff", color="#4772b8", fontname="Arial", fontsize=9];
+  edge [color="#555555", arrowsize=0.8];
+
+  preprocess [label="{preprocessing.py|+ PreprocessConfig\l+ load_image()\l+ preprocess()\l}"];
+  km [label="{kmeans.py|+ segment_kmeans()\l+ labels_to_color()\l}"];
+  rg [label="{region_growing.py|+ grow_region()\l}"];
+  edge_seg [label="{edge_segmentation.py|+ canny_edges()\l+ edge_to_regions()\l+ segment_edges()\l}"];
+  ms [label="{mean_shift.py|+ mean_shift_segment()\l}"];
+  hy [label="{hybrid_segmentation.py|+ segment_hybrid()\lK-Means + Canny refinement\l}"];
+  obj [label="{object_extraction.py|+ ExtractedObject\l+ labels_to_foreground()\l+ clean_mask()\l+ extract_objects()\l+ draw_bounding_boxes()\l}"];
+  eval [label="{evaluation.py|+ MethodResult\l+ time_call()\l+ binary_metrics()\l+ load_binary_mask()\l}"];
+  viz [label="{visualization.py|+ save_image()\l+ save_json()\l+ save_csv()\l+ overlay_mask()\l}"];
+  pipe [label="{pipeline.py|+ RunArtifacts\l+ run_method()\l+ apply_ground_truth()\l+ save_artifacts()\l+ save_comparison()\l}"];
+  cli [label="{main.py|+ parse_seed()\l+ build_parser()\l+ main()\l}"];
+
+  cli -> pipe;
+  pipe -> preprocess;
+  pipe -> km;
+  pipe -> rg;
+  pipe -> edge_seg;
+  pipe -> ms;
+  pipe -> hy;
+  pipe -> obj;
+  pipe -> eval;
+  pipe -> viz;
+  hy -> km [label="clusters"];
+  hy -> edge_seg [label="boundary evidence"];
+}

@@ -1,0 +1,45 @@
+{
+  "method": "hybrid",
+  "objects": [
+    {
+      "object_id": 1,
+      "area": 27428,
+      "x": 314,
+      "y": 89,
+      "width": 188,
+      "height": 148,
+      "centroid_x": 407.3605804287589,
+      "centroid_y": 162.45369695201984
+    },
+    {
+      "object_id": 2,
+      "area": 17924,
+      "x": 80,
+      "y": 75,
+      "width": 151,
+      "height": 151,
+      "centroid_x": 154.9846016514171,
+      "centroid_y": 150.00039053782638
+    },
+    {
+      "object_id": 3,
+      "area": 16858,
+      "x": 161,
+      "y": 291,
+      "width": 189,
+      "height": 119,
+      "centroid_x": 255.01696523905565,
+      "centroid_y": 349.9568157551311
+    },
+    {
+      "object_id": 4,
+      "area": 15938,
+      "x": 520,
+      "y": 251,
+      "width": 156,
+      "height": 175,
+      "centroid_x": 599.004203789685,
+      "centroid_y": 348.139227004643
+    }
+  ]
+}

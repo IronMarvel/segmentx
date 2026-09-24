@@ -1,0 +1,21 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", fontname="Arial", pad=0.2];
+  node [fontname="Arial", fontsize=10];
+  edge [fontname="Arial", fontsize=9, color="#555555"];
+  user [shape=box, style="rounded,filled", fillcolor="#e9f7ef", label="User"];
+  subgraph cluster_system {
+    label="SegmentX Toolkit"; color="#9aa7b2"; style="rounded,dashed"; fontname="Arial";
+    run [shape=ellipse, label="Run segmentation"];
+    preprocess [shape=ellipse, label="Preprocess image"];
+    choose [shape=ellipse, label="Select method"];
+    extract [shape=ellipse, label="Extract objects"];
+    compare [shape=ellipse, label="Compare methods"];
+    evaluate [shape=ellipse, label="Evaluate against\nground truth"];
+    view [shape=ellipse, label="View saved results"];
+  }
+  user -> run; user -> choose; user -> compare; user -> evaluate; user -> view;
+  run -> preprocess [label="includes"];
+  run -> extract [label="produces"];
+  compare -> run [label="repeats"];
+  evaluate -> run [label="uses"];
+}

@@ -1,0 +1,49 @@
+{
+  "results": [
+    {
+      "method": "kmeans",
+      "processing_time_sec": 0.44646126199995706,
+      "num_objects": 4,
+      "foreground_ratio": 0.22291666666666668,
+      "iou": 0.996425055696596,
+      "dice": 0.9982093270703034,
+      "pixel_accuracy": 0.9992013888888889
+    },
+    {
+      "method": "region-growing",
+      "processing_time_sec": 0.04391236900005424,
+      "num_objects": 1,
+      "foreground_ratio": 0.04978877314814815,
+      "iou": 0.22320085093135475,
+      "dice": 0.36494554555191466,
+      "pixel_accuracy": 0.8267216435185185
+    },
+    {
+      "method": "edge",
+      "processing_time_sec": 0.005842821999976877,
+      "num_objects": 4,
+      "foreground_ratio": 0.22618055555555555,
+      "iou": 0.9862093668845706,
+      "dice": 0.9930568079350767,
+      "pixel_accuracy": 0.9968807870370371
+    },
+    {
+      "method": "mean-shift",
+      "processing_time_sec": 0.5121454289999292,
+      "num_objects": 4,
+      "foreground_ratio": 0.22302083333333333,
+      "iou": 0.9984962795882917,
+      "dice": 0.9992475740750351,
+      "pixel_accuracy": 0.9996643518518519
+    },
+    {
+      "method": "hybrid",
+      "processing_time_sec": 0.28179427400004897,
+      "num_objects": 4,
+      "foreground_ratio": 0.22613425925925926,
+      "iou": 0.9862079553741636,
+      "dice": 0.9930560923449537,
+      "pixel_accuracy": 0.9968807870370371
+    }
+  ]
+}

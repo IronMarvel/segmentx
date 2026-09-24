@@ -1,0 +1,15 @@
+{
+  "method": "region-growing",
+  "objects": [
+    {
+      "object_id": 1,
+      "area": 17206,
+      "x": 82,
+      "y": 77,
+      "width": 147,
+      "height": 147,
+      "centroid_x": 155.01127513658025,
+      "centroid_y": 149.9777984424038
+    }
+  ]
+}

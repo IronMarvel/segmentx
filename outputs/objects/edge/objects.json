@@ -1,0 +1,45 @@
+{
+  "method": "edge",
+  "objects": [
+    {
+      "object_id": 1,
+      "area": 27428,
+      "x": 314,
+      "y": 89,
+      "width": 188,
+      "height": 148,
+      "centroid_x": 407.36849205191777,
+      "centroid_y": 162.49445821787953
+    },
+    {
+      "object_id": 2,
+      "area": 17921,
+      "x": 80,
+      "y": 75,
+      "width": 151,
+      "height": 151,
+      "centroid_x": 154.96177668656884,
+      "centroid_y": 150.02734222420625
+    },
+    {
+      "object_id": 3,
+      "area": 16886,
+      "x": 161,
+      "y": 291,
+      "width": 189,
+      "height": 119,
+      "centroid_x": 255.01006751154802,
+      "centroid_y": 349.9617434561175
+    },
+    {
+      "object_id": 4,
+      "area": 15928,
+      "x": 520,
+      "y": 251,
+      "width": 156,
+      "height": 175,
+      "centroid_x": 598.9738824711201,
+      "centroid_y": 348.16926167754895
+    }
+  ]
+}

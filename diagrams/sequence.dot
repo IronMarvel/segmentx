@@ -1,0 +1,23 @@
+digraph G {
+  rankdir=LR;
+  graph [fontname="Arial", bgcolor="white", pad=0.2, nodesep=0.5, ranksep=0.6];
+  node [shape=box, style="rounded,filled", fillcolor="#f7f7f7", color="#666666", fontname="Arial", fontsize=9, margin="0.1,0.06"];
+  edge [color="#555555", arrowsize=0.7, fontname="Arial", fontsize=8];
+
+  user [label="User"];
+  cli [label="CLI"];
+  pipe [label="Pipeline"];
+  seg [label="Segmentation"];
+  obj [label="Object\nExtraction"];
+  out [label="Output\nWriter"];
+
+  user -> cli [label="command + image"];
+  cli -> pipe [label="run_method()"];
+  pipe -> pipe [label="preprocess()"];
+  pipe -> seg [label="segment"];
+  seg -> pipe [label="mask/labels"];
+  pipe -> obj [label="extract_objects()"];
+  obj -> pipe [label="objects + boxes"];
+  pipe -> out [label="save artifacts"];
+  out -> user [label="PNG/CSV/JSON"];
+}

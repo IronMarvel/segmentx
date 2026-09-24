@@ -1,0 +1,45 @@
+{
+  "method": "kmeans",
+  "objects": [
+    {
+      "object_id": 1,
+      "area": 27152,
+      "x": 315,
+      "y": 90,
+      "width": 186,
+      "height": 146,
+      "centroid_x": 407.5,
+      "centroid_y": 162.5
+    },
+    {
+      "object_id": 2,
+      "area": 17777,
+      "x": 80,
+      "y": 75,
+      "width": 151,
+      "height": 151,
+      "centroid_x": 155.0,
+      "centroid_y": 150.0
+    },
+    {
+      "object_id": 3,
+      "area": 16442,
+      "x": 162,
+      "y": 292,
+      "width": 187,
+      "height": 117,
+      "centroid_x": 254.96849531687144,
+      "centroid_y": 350.0015813161416
+    },
+    {
+      "object_id": 4,
+      "area": 15663,
+      "x": 520,
+      "y": 251,
+      "width": 156,
+      "height": 175,
+      "centroid_x": 599.1176658366852,
+      "centroid_y": 348.2682117091234
+    }
+  ]
+}
